@@ -1,2 +1,6 @@
-# Daily-Algorithm-TIL
-This is an auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
+# Daily Algorithm TIL 🚀
+
+## 📌 Solved Problems
+
+
+✅ 자동으로 업데이트됨! (GitHub Actions 활용)
