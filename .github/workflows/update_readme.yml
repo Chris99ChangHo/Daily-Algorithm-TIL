@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main  # 또는 'master' (현재 사용하는 브랜치명 확인 필요)
-  workflow_dispatch:
+  workflow_dispatch:  # 수동 트리거를 위해 설정
 
 jobs:
   update-readme:
@@ -25,9 +25,11 @@ jobs:
         run: python scripts/update_readme.py
 
       - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub Token을 환경 변수로 설정
         run: |
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"  # GitHub Action bot 이메일 설정
           git add README.md
-          git commit -m "🔄 Auto-update README"
-          git push
+          git commit -m "🔄 Auto-update README" || echo "No changes to commit"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
