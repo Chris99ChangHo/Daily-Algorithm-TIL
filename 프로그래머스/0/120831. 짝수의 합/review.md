@@ -22,7 +22,7 @@ def solution(n):
 ```
 
 ## ✅ 추가: 리스트 컴프리헨션을 활용한 한 줄 풀이
-*더 간단하게도 표현할 수 있어요:
+* 더 간단하게도 표현할 수 있어요:
 ```python
 def solution(n):
     return sum([i for i in range(n + 1) if i % 2 == 0])
